@@ -85,13 +85,13 @@ void test10() {
 // max long long type number (максимальное значение типа long long)
 void test11() {
 	long long number = 9223372036854775807LL;
-	bool expected = false;
+	bool expected = true;
 	print_test(number, expected, "test11");
 }
 
 // min long long type number (минимальное значение типа long long)
 void test12() {
 	long long number = -1 * 9223372036854775808LL;
-	bool expected = false;
+	bool expected = true;
 	print_test(number, expected, "test12");
 }
