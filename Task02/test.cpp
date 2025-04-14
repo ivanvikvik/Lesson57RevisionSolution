@@ -5,7 +5,7 @@
 // минимальное и максимальное значения int, а также числа, которые 
 // являются и не являются степенями четверки.
 
-// Тестовые случаи классов эквивалентности (equivalence classes)
+// Тестовые случаи классов эквивалентности / Equivalence classes
 
 // 4^2 = 16
 void test01() {
@@ -63,7 +63,8 @@ void test08() {
 	print_test(number, expected, "test08");
 }
 
-// Тестовые случаи граничных значений (boundary values)
+
+// Тестовые случаи граничных значений / Boundary values
 
 
 // 4^0 = 1 (минимальная степень)
@@ -96,14 +97,14 @@ void test12() {
 
 // max int type number (максимальное значение типа int)
 void test13() {
-	int number = 2147483647;
+	int number = 2'147'483'647;
 	bool expected = false;
 	print_test(number, expected, "test13");
 }
 
 // min int type number (минимальное значение типа int)
 void test14() {
-	int number = -2147483648;
+	int number = -2'147'483'648;
 	bool expected = false;
 	print_test(number, expected, "test14");
 }

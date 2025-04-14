@@ -24,6 +24,7 @@ void test02() {
 
 // tribonacci(7) = 1 + 2 + 4 = 7
 void test03() {
+	int n = 0;
 	int index = 7;
 	long long expected = 7;
 	print_test(index, expected, "test03");
@@ -79,14 +80,21 @@ void test09() {
 // Large index values / Проверка больших значений
 // performance and correctness check (проверка быстродействия и корректности)
 void test10() {
-	int index = 19;
-	long long expected = 35890;
+	int index = 20;
+	long long expected = 19'513;
 	print_test(index, expected, "test10");
 }
 
 // testing larger indices (тест для очень больших индексов)
 void test11() {
-	int index = 29;
-	long long expected = 29249425;
+	int index = 35;
+	long long expected = 181'997'601;
 	print_test(index, expected, "test11");
+}
+
+// testing larger indices (тест для очень больших индексов)
+void test12() {
+	int index = 40;
+	long long expected = 3'831'006'429;
+	print_test(index, expected, "test12");
 }

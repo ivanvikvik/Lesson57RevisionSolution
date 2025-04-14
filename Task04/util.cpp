@@ -1,6 +1,6 @@
 ﻿#include "util.h"
 
-void print_test(int index, long long expected, string test_name) {
+void print_test(int index, long long expected, const string& test_name) {
 	HANDLE h;
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -9,29 +9,31 @@ void print_test(int index, long long expected, string test_name) {
 
 	SetConsoleTextAttribute(h, (0 | 15));
 
-	if (!result) {
-		cout << "Index: " << index << endl;
-		cout << "Tribonacci number: expected = " << expected
-			<< ", but actual = " << actual << endl;
-	}
-
 	cout << test_name << " --> ";
-	
+
 	string msg;
-	
+
 	if (result) {
-		msg = "PASS(green)                   ";
-								// background  color
-		SetConsoleTextAttribute(h, (((2 << 4) | 15)));
+		msg = "PASS(green)                                    ";
+		// background  color
+		SetConsoleTextAttribute(h, ((2 << 4) | 15));
 	}
 	else {
-		msg = "FAIL(red)                     ";
+		msg = "FAIL(red)                                      ";
 		SetConsoleTextAttribute(h, ((4 << 4) | 15));
 	}
 
 	cout << msg << endl;
 
+	SetConsoleTextAttribute(h, (0 | 15));
+
+	if (!result) {
+		cout << "Index: " << index << endl;
+		cout << "Tribonacci number: expected = " << expected
+			<< ", but actual = " << actual << endl;
+	}
+			
 	SetConsoleTextAttribute(h, (0 | 14));
-	cout << "--------------------------------------------------------" << endl;
+	cout << "----------------------------------------------------------" << endl;
 	SetConsoleTextAttribute(h, (0 | 15));
 }

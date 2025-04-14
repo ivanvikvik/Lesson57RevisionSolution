@@ -6,7 +6,7 @@
 // количеством цифр.
 
 
-// Тестовые случаи классов эквивалентности (equivalence classes)
+// Тестовые случаи классов эквивалентности / Equivalence classes
 
 // 9 digits (9 цифр) 
 void test01() {
@@ -44,10 +44,10 @@ void test05() {
 }
 
 
-// Тестовые случаи граничных значений (boundary values)
+// Тестовые случаи граничных значений / Boundary values
 
 
-// 4^0 = 1 (минимальная степень)
+// zero (ноль)
 void test06() {
 	long long number = 0;
 	bool expected = true;
@@ -84,14 +84,28 @@ void test10() {
 
 // max long long type number (максимальное значение типа long long)
 void test11() {
-	long long number = 9223372036854775807LL;
+	long long number = 9'223'372'036'854'775'807LL;
 	bool expected = true;
 	print_test(number, expected, "test11");
 }
 
 // min long long type number (минимальное значение типа long long)
 void test12() {
-	long long number = -1 * 9223372036854775808LL;
+	long long number = -1 * 9'223'372'036'854'775'808LL;
 	bool expected = true;
 	print_test(number, expected, "test12");
+}
+
+// too large long long type number (достаточно большое значение типа long long)
+void test13() {
+	long long number = 922'337'203'685'477'580LL;
+	bool expected = false;
+	print_test(number, expected, "test13");
+}
+
+// too small long long type number (достаточно маленькое значение типа long long)
+void test14() {
+	long long number = -922'337'203'685'477'580LL;
+	bool expected = false;
+	print_test(number, expected, "test14");
 }

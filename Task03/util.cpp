@@ -9,29 +9,32 @@ void print_test(long long number, bool expected, string test_name) {
 
 	SetConsoleTextAttribute(h, (0 | 15));
 
-	if (!result) {
-		cout << "Number: " << number << endl;
-		cout << "Is the count of number digits odd: expected = " << (expected ? "yes" : "no")
-			<< ", but actual = " << (actual ? "yes" : "no") << endl;
-	}
-
 	cout << test_name << " --> ";
-	
+
 	string msg;
-	
+
 	if (result) {
-		msg = "PASS(green)                   ";
-								// background  color
-		SetConsoleTextAttribute(h, (((2 << 4) | 15)));
+		msg = "PASS(green)                                              ";
+		// background  color
+		SetConsoleTextAttribute(h, ((2 << 4) | 15));
 	}
 	else {
-		msg = "FAIL(red)                     ";
+		msg = "FAIL(red)                                                ";
 		SetConsoleTextAttribute(h, ((4 << 4) | 15));
 	}
 
 	cout << msg << endl;
 
+
+	SetConsoleTextAttribute(h, (0 | 15));
+
+	if (!result) {
+		cout << "Number: " << number << endl;
+		cout << "Is the count of number digits odd: expected = " << (expected ? "yes" : "no")
+			<< ", but actual = " << (actual ? "yes" : "no") << endl;
+	}
+		
 	SetConsoleTextAttribute(h, (0 | 14));
-	cout << "-------------------------------------------------------------------" << endl;
+	cout << "--------------------------------------------------------------------" << endl;
 	SetConsoleTextAttribute(h, (0 | 15));
 }
