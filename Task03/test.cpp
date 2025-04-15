@@ -6,7 +6,7 @@
 // количеством цифр.
 
 
-// Тестовые случаи классов эквивалентности / Equivalence classes
+// Equivalence classes / Классы эквивалентности
 
 // 9 digits (9 цифр) 
 void test01() {
@@ -44,8 +44,7 @@ void test05() {
 }
 
 
-// Тестовые случаи граничных значений / Boundary values
-
+// Boundary values / Граничныя значения
 
 // zero (ноль)
 void test06() {
