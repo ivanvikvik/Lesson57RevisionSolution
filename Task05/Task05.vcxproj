@@ -128,14 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="logic.h" />
-    <ClInclude Include="test.h" />
-    <ClInclude Include="util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="logic.cpp" />
-    <ClCompile Include="test.cpp" />
-    <ClCompile Include="test_runner.cpp" />
-    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
