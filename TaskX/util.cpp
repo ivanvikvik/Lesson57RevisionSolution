@@ -1,6 +1,6 @@
 ﻿#include "util.h"
 
-string convert(int matrix[DEFAUL_SIZE][DEFAUL_SIZE], int n, int m) {
+string convert(int matrix[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m) {
 	string s = "";
 	for (int i = 0; i < n; i++)
 	{
@@ -14,7 +14,7 @@ string convert(int matrix[DEFAUL_SIZE][DEFAUL_SIZE], int n, int m) {
 	return s;
 }
 
-void print_test(int matrix[DEFAUL_SIZE][DEFAUL_SIZE], int n, int m, string expected, string test_name) {
+void print_test(int matrix[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m, string expected, string test_name) {
 	HANDLE h;
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -22,9 +22,8 @@ void print_test(int matrix[DEFAUL_SIZE][DEFAUL_SIZE], int n, int m, string expec
 		cout << "Current Matrix:\n" << convert(matrix, n, m);
 	}
 
-	int i_actual = 0, j_actual = 0;
-	get_last_local_minimum(matrix, n, m, &i_actual, &j_actual);
-	bool result = i_actual == i_expected && j_actual == j_expected;
+	string actual = get_all_local_minimums(matrix, n, m);
+	bool result = actual == expected;
 
 	SetConsoleTextAttribute(h, (0 | 15));
 	cout << test_name << " --> ";
@@ -42,14 +41,14 @@ void print_test(int matrix[DEFAUL_SIZE][DEFAUL_SIZE], int n, int m, string expec
 	}
 
 	cout << msg << endl;
-	SetConsoleTextAttribute(h, (0 | 15));
+	/*SetConsoleTextAttribute(h, (0 | 15));
 
 	if (!result && i_expected != 0 && j_expected != 0 && i_actual != 0 && j_actual != 0) {
 		cout << "Result last local minimum: " << "expected = matrix["
 			<< i_expected << ";" << j_expected << "] - " << matrix[i_expected - 1][j_expected - 1]
 			<< ", but actual = matrix[" << i_actual << ";" << j_actual << "] - "
 			<< matrix[i_actual - 1][j_actual - 1] << endl;
-	}
+	}*/
 
 	SetConsoleTextAttribute(h, (0 | 14));
 	cout << "-----------------------------------------" << endl;

@@ -163,9 +163,7 @@ void test15() {
 		{1},
 		{2}
 	};
-
-	int matrix[DEFAULT_SIZE][DEFAULT_SIZE]{};
-
+		
 	print_test(matrix, n, m, expected, "test15");
 }
 
