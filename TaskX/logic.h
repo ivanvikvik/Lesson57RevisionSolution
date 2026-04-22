@@ -4,4 +4,4 @@
 
 using namespace std;
 
-string get_indexes_of_last_local_minimum(int matrix[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m);
+string get_all_local_minimums(int matrix[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m);
